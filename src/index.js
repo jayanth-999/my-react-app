@@ -3,15 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
-import SampleClassComponent from './Components/ClassComponent'
-import SampleFunctioanlComonent from './Components/FunctionalComponent';
+import DispalyProps from './Components/DisplayProps'
+import Counter from "./Components/Counter"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App/> */}
-    <SampleClassComponent/>
-    <SampleFunctioanlComonent/>
+    <p>1.Class Component</p>
+    <Counter></Counter>
+    <p>2.functional Component with props</p>
+    <DispalyProps name="jayanth"></DispalyProps>
   </React.StrictMode>
   
 );
