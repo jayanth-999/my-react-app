@@ -3,19 +3,24 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
-import DispalyProps from './Components/DisplayProps'
-import Counter from "./Components/Counter"
+import SampleComponent from './Components/EventHandlerAndBind';
+import ParentComponent from './Components/ParentComponent';
+import ListComponent from './Components/listComponent';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App/> */}
-    <p>1.Class Component</p>
-    <Counter></Counter>
-    <p>2.functional Component with props</p>
-    <DispalyProps name="jayanth"></DispalyProps>
+
+   <SampleComponent></SampleComponent>
+   <br></br>
+   <hr></hr>
+   <ParentComponent></ParentComponent>
+   <br></br>
+   <hr></hr>
+   <ListComponent></ListComponent>
   </React.StrictMode>
-  
 );
 
 // If you want to start measuring performance in your app, pass a function
