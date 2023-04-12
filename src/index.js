@@ -7,10 +7,12 @@ import SampleComponent from './Components/EventHandlerAndBind';
 import ParentComponent from './Components/ParentComponent';
 import ListComponent from './Components/listComponent';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App/> */}
+
    <SampleComponent></SampleComponent>
    <br></br>
    <hr></hr>
