@@ -3,23 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
-import SampleComponent from './Components/EventHandlerAndBind';
-import ParentComponent from './Components/ParentComponent';
-import ListComponent from './Components/listComponent';
+import Lists from './components/Lists';
+import StylesComponent from './components/StylesComponent';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App/> */}
-
-   <SampleComponent></SampleComponent>
-   <br></br>
-   <hr></hr>
-   <ParentComponent></ParentComponent>
-   <br></br>
-   <hr></hr>
-   <ListComponent></ListComponent>
+   <Lists/>
+   <StylesComponent/>
   </React.StrictMode>
 );
 
