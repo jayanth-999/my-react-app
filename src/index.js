@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Lists from './components/Lists';
-import StylesComponent from './components/StylesComponent';
+import Mounting from './components/Mounting';
 
 
 
@@ -12,8 +11,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     {/* <App/> */}
-   <Lists/>
-   <StylesComponent/>
+   <Mounting/>
   </React.StrictMode>
 );
 
