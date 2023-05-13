@@ -1,28 +1,31 @@
-import React, { useState,useEffect } from 'react';
+import React, { createContext, useContext } from 'react';
 
-function SampleComponent2(){
-  const [count, setCount] = useState(0);
+const ThemeContext = createContext();
+const UserContext = createContext();
 
-  useEffect(() => {
-    console.log("Count has changed!");
-  }, [count]);
+const App = () => {
+  const user = { name: 'Jayanth', age: 22 };
+  const theme = 'dark';
 
-  const handleIncrement = () => {
-    setCount(count + 1);
-  };
+  return (
+    <ThemeContext.Provider value={theme}>
+      <UserContext.Provider value={user}>
+        <MyComponent />
+      </UserContext.Provider>
+    </ThemeContext.Provider>
+  );
+};
 
-  const handleDecrement = () => {
-    setCount(count - 1);
-  };
+const MyComponent = () => {
+  const theme = useContext(ThemeContext);
+  const user = useContext(UserContext);
 
   return (
     <div>
-      <h1>Count: {count}</h1>
-      <button onClick={handleIncrement}>Increment</button>
-      <button onClick={handleDecrement}>Decrement</button>
+      <h1>{theme} theme</h1>
+      <p>User: {user.name}, Age: {user.age}</p>
     </div>
   );
+};
 
-}
-
-export default SampleComponent2;
+export default App;
