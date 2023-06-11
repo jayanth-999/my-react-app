@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
+import Apps from './components/FunComponent1';
 import SampleComponent from "./components/SampleComponent"
-import App from './components/SampleComponent2';
 
 
 
@@ -13,6 +13,6 @@ root.render(
   <>
     {/* <App/> */}
     <SampleComponent/>
-    <App/>
+    <Apps/>
   </>
 );
