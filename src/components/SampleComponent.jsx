@@ -1,23 +1,27 @@
-import React, {useState, useEffect} from 'react';
-import axios from 'axios';
+import React, { useCallback } from 'react';
 
 const SampleComponent = () => {
-    const [data, setData] = useState({});
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const result = await axios.get('https://jsonplaceholder.typicode.com/posts/1');
-            setData(result.data);
-        };
-        fetchData();
-    }, []);
+  const firstFunction = useCallback(() => {
+    console.log('First Function');
+  }, []);
 
-    return (
-        <div>
-            <h1>{data.title}</h1>
-            <p>{data.body}</p>
-        </div>
-    );
+  const secondFunction = useCallback(() => {
+    console.log('Second Function');
+  }, []);
+
+  const thirdFunction = useCallback(() => {
+    console.log('Third Function');
+  }, []);
+
+  return (
+    <div>
+      <h1>Functional Component</h1>
+      <button onClick={firstFunction}>First Function</button>
+      <button onClick={secondFunction}>Second Function</button>
+      <button onClick={thirdFunction}>Third Function</button>
+    </div>
+  );
 };
 
 export default SampleComponent;
