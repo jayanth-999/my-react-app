@@ -17,6 +17,7 @@ const SampleComponent = () => {
   return (
     <div>
       <h1>Functional Component</h1>
+      <h2>Sample for checking git pages</h2>
       <button onClick={firstFunction}>First Function</button>
       <button onClick={secondFunction}>Second Function</button>
       <button onClick={thirdFunction}>Third Function</button>
