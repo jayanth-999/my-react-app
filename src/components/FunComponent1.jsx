@@ -1,45 +1,31 @@
-import React, { useState } from "react";
+import React, { useReducer } from 'react';
 
-// Custom hook for handling input elements
-const useInput = (initialValue) => {
-    const [value, setValue] = useState(initialValue);
-
-    const handleChange = (event) => {
-        setValue(event.target.value);
-    };
-
-    return [value, handleChange];
+// Reducer function
+const counterReducer = (state, action) => {
+  switch (action) {
+    case 'INCREMENT':
+      return { count: state.count + 1 };
+    case 'DECREMENT':
+      return { count: state.count - 1 };
+    case 'RESET':
+      return { count: 0 };
+    default:
+      return state;
+  }
 };
 
-// Component 1
-const Component1 = () => {
-    const [inputValue, setInputValue] = useInput("");
+const Counter1 = () => {
+  // Initialize state using useReducer
+  const [state, updatecall] = useReducer(counterReducer, { count: 0 });
 
-    return (
-        <div>
-            <input type="text" value={inputValue} onChange={setInputValue} />
-            <p>Component 1: {inputValue}</p>
-        </div>
-    );
+  return (
+    <div>
+      <h1>Counter: {state.count}</h1>
+      <button onClick={() => updatecall('INCREMENT')}>Increment</button>
+      <button onClick={() => updatecall('DECREMENT' )}>Decrement</button>
+      <button onClick={() => updatecall('RESET')}>Reset</button>
+    </div>
+  );
 };
 
-// Component 2
-const Component2 = () => {
-    const [inputValue, setInputValue] = useInput("");
-
-    return (
-        <div>
-            <input type="text" value={inputValue} onChange={setInputValue} />
-            <p>Component 2: {inputValue}</p>
-        </div>
-    );
-};
-
-export default function Apps() {
-    return (
-        <div>
-            <Component1 />
-            <Component2 />
-        </div>
-    );
-}
+export default Counter1;
